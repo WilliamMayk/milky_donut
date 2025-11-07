@@ -178,7 +178,7 @@ const Order = () => {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-1 py-6 sm:py-8 md:py-12 lg:py-20 px-4">
-        <div className="container max-w-4xl mx-auto">
+  <div className="container max-w-4xl mx-auto px-4 sm:px-6">
           <motion.div 
             ref={headerRef}
             className="text-center mb-6 sm:mb-8 md:mb-12 space-y-2 sm:space-y-3 md:space-y-4"
@@ -198,7 +198,7 @@ const Order = () => {
             animate={isFormInView ? "visible" : "hidden"}
             variants={fadeInUp}
           >
-          <Card className="border-2 border-secondary mb-6 sm:mb-8">
+          <Card className="border-2 border-secondary mb-6 sm:mb-8 rounded-2xl overflow-hidden">
             <CardHeader className="p-4 sm:p-6">
               <CardTitle className="text-lg sm:text-xl">Your Information</CardTitle>
             </CardHeader>
@@ -229,43 +229,43 @@ const Order = () => {
 
           <motion.div 
             ref={itemsRef}
-            className="grid gap-3 sm:gap-4 mb-6 sm:mb-8"
+            className="grid grid-cols-1 gap-3 sm:gap-4 mb-6 sm:mb-8"
             initial="hidden"
             animate={isItemsInView ? "visible" : "hidden"}
             variants={staggerContainer}
           >
             {availableItems.map((item, index) => (
               <motion.div key={item.id} variants={fadeInUp}>
-              <Card className="border-2 hover:border-secondary transition-colors">
-                <CardContent className="flex items-center justify-between p-4 sm:p-6 gap-3 sm:gap-4">
-                  <div className="flex items-center gap-3 sm:gap-4 flex-1 min-w-0">
+              <Card className="w-full border-2 rounded-2xl overflow-hidden bg-card hover:shadow-lg hover:-translate-y-1 transform transition-transform duration-200">
+                <CardContent className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 sm:p-6 gap-3 sm:gap-4">
+                  <div className="flex items-center gap-3 sm:gap-4 flex-1 min-w-0 w-full">
                     <span className="text-2xl sm:text-3xl flex-shrink-0">{item.emoji}</span>
                     <div className="min-w-0 flex-1">
-                      <h3 className="font-semibold text-base sm:text-lg truncate">{item.name}</h3>
-                      <p className="text-xs sm:text-sm text-muted-foreground truncate">{item.flavor}</p>
+                      <h3 className="font-semibold text-base sm:text-lg break-words">{item.name}</h3>
+                      <p className="text-xs sm:text-sm text-muted-foreground break-words">{item.flavor}</p>
                       <p className="text-accent font-bold text-sm sm:text-base">GHC {item.price}</p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+                  <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0 mt-3 sm:mt-0">
                     <Button
                       variant="outline"
                       size="icon"
-                      className="h-8 w-8 sm:h-10 sm:w-10"
+                      className="h-10 w-10 p-2 sm:h-10 sm:w-10 active:scale-95 transition-transform"
                       onClick={() => updateQuantity(item.id, -1)}
                       disabled={!orderItems[item.id]}
                     >
-                      <Minus className="h-3 w-3 sm:h-4 sm:w-4" />
+                      <Minus className="h-4 w-4" />
                     </Button>
-                    <span className="w-8 sm:w-12 text-center font-semibold text-base sm:text-lg">
+                    <span className="w-10 sm:w-12 text-center font-semibold text-base sm:text-lg">
                       {orderItems[item.id] || 0}
                     </span>
                     <Button
                       variant="outline"
                       size="icon"
-                      className="h-8 w-8 sm:h-10 sm:w-10"
+                      className="h-10 w-10 p-2 sm:h-10 sm:w-10 active:scale-95 transition-transform"
                       onClick={() => updateQuantity(item.id, 1)}
                     >
-                      <Plus className="h-3 w-3 sm:h-4 sm:w-4" />
+                      <Plus className="h-4 w-4" />
                     </Button>
                   </div>
                 </CardContent>
@@ -279,7 +279,7 @@ const Order = () => {
             animate={isItemsInView ? "visible" : "hidden"}
             variants={fadeInUp}
           >
-          <Card className="border-2 border-accent sticky bottom-2 sm:bottom-4 shadow-lg bg-card">
+          <Card className="border-2 border-accent sticky bottom-2 sm:bottom-4 shadow-lg bg-card rounded-2xl overflow-hidden">
             <CardContent className="p-3 sm:p-4 md:p-6">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2 md:gap-4 mb-3 sm:mb-4">
                 <span className="text-base sm:text-lg md:text-xl font-semibold">Total Amount</span>
@@ -287,12 +287,12 @@ const Order = () => {
               </div>
               <Button 
                 onClick={handleSubmitOrder}
-                className="w-full bg-accent hover:bg-accent/90 text-accent-foreground rounded-full text-sm sm:text-base"
+                className="w-full bg-accent hover:bg-accent/90 text-accent-foreground rounded-full text-sm sm:text-base active:scale-95 transform transition-all"
                 size="lg"
                 disabled={Object.keys(orderItems).length === 0 || isSubmitting}
               >
                 <ShoppingCart className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-                Generate Order Code
+                {isSubmitting ? 'Submitting...' : 'Generate Order Code'}
               </Button>
               <p className="text-xs sm:text-sm text-center text-muted-foreground mt-2 sm:mt-3">
                 <span className="hidden sm:inline">📦 Orders close Friday 6PM • Saturday deliveries only</span>
