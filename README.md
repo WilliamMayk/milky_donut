@@ -94,7 +94,7 @@ Because your sweet tooth deserves it 🍩
 ## 📬 Contact
 
 📱 WhatsApp: [Click to Chat](https://wa.me/233556033174)
-📧 Email: [sweettemptation@gmail.com](mailto:sweettemptation@gmail.com)
+📧 Email: [sweet.temptation.pastries@gmail.com](mailto:sweet.temptation.pastries@gmail.com)
 📍 Accra, Ghana
 
 ```
