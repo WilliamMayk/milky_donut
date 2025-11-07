@@ -357,9 +357,6 @@ const Order = () => {
                   <span>You'll receive a confirmation message once payment is verified</span>
                 </li>
               </ol>
-              <p className="text-xs text-muted-foreground pt-2">
-                📱 Our Mobile Money number will be sent to your phone: <span className="break-all">{customerPhone}</span>
-              </p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-3 sm:pt-4">
