@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" id="donut">
+  <defs>
+    <linearGradient id="a" x1="-3.069" x2="62.433" y1="63.172" y2="4.949" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff200"></stop>
+      <stop offset="1" stop-color="#cd118c"></stop>
+    </linearGradient>
+    <linearGradient xlink:href="#a" id="b" x1="-6.544" x2="58.957" y1="59.262" y2="1.039"></linearGradient>
+    <linearGradient xlink:href="#a" id="c" x1="-16.034" x2="49.467" y1="48.586" y2="-9.637"></linearGradient>
+    <linearGradient xlink:href="#a" id="d" x1="-14.82" x2="50.681" y1="49.951" y2="-8.272"></linearGradient>
+    <linearGradient xlink:href="#a" id="e" x1="-10.572" x2="54.929" y1="54.731" y2="-3.493"></linearGradient>
+    <linearGradient xlink:href="#a" id="f" x1="-6.986" x2="58.515" y1="58.765" y2=".542"></linearGradient>
+    <linearGradient xlink:href="#a" id="g" x1="-.034" x2="65.467" y1="66.586" y2="8.363"></linearGradient>
+    <linearGradient xlink:href="#a" id="h" x1="2.559" x2="68.06" y1="69.503" y2="11.28"></linearGradient>
+    <linearGradient xlink:href="#a" id="i" x1="-2.075" x2="63.426" y1="64.289" y2="6.066"></linearGradient>
+  </defs>
+  <g>
+    <path fill="url(#a)" d="M32,12C15.458,12,2,20.972,2,32S15.458,52,32,52s30-8.972,30-20S48.542,12,32,12Zm0,2c15.439,0,28,8.075,28,18,0,.109-.01.216-.013.324a8.664,8.664,0,0,0-3.758,3.038C55.048,36.777,54.029,38,52,38s-3.06-1.225-4.242-2.643C46.445,33.784,44.957,32,41.99,32s-4.456,1.785-5.768,3.36C35.041,36.776,34.021,38,31.99,38s-3.051-1.224-4.231-2.64C26.446,33.785,24.959,32,21.99,32s-4.456,1.785-5.768,3.36C15.041,36.776,14.021,38,11.99,38s-3.039-1.221-4.218-2.635a8.667,8.667,0,0,0-3.759-3.041C4.01,32.216,4,32.109,4,32,4,22.075,16.561,14,32,14Zm0,36C17.988,50,6.349,43.349,4.316,34.7a10.209,10.209,0,0,1,1.92,1.944C7.546,38.217,9.031,40,11.99,40s4.456-1.785,5.769-3.36c1.18-1.416,2.2-2.64,4.231-2.64s3.051,1.224,4.232,2.64c1.312,1.575,2.8,3.36,5.768,3.36s4.456-1.785,5.769-3.36c1.18-1.416,2.2-2.64,4.231-2.64s3.051,1.223,4.232,2.638C47.536,38.214,49.025,40,52,40s4.452-1.784,5.765-3.357A10.221,10.221,0,0,1,59.684,34.7C57.651,43.35,46.012,50,32,50Z"></path>
+    <path fill="url(#b)" d="M32,30c5.333,0,11-1.752,11-5s-5.667-5-11-5-11,1.752-11,5S26.667,30,32,30Zm0-8c5.494,0,9,1.777,9,3s-3.506,3-9,3-9-1.777-9-3S26.506,22,32,22Z"></path>
+    <rect width="4" height="2" x="13" y="20" fill="url(#c)"></rect>
+    <rect width="4" height="2" x="9" y="26" fill="url(#d)"></rect>
+    <rect width="4" height="2" x="13" y="31" fill="url(#e)"></rect>
+    <rect width="4" height="2" x="38" y="16" fill="url(#f)"></rect>
+    <rect width="4" height="2" x="47" y="22" fill="url(#g)"></rect>
+    <rect width="4" height="2" x="45" y="29" fill="url(#h)"></rect>
+    <rect width="4" height="2" x="30" y="33" fill="url(#i)"></rect>
+  </g>
+</svg>

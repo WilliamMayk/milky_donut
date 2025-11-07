@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="Lock">
+  <g fill="#9f244d" class="color000000 svgShape">
+    <path d="M25 11h-1v-1a8 8 0 0 0-16 0v1H7a3 3 0 0 0-3 3v13a3 3 0 0 0 3 3h18a3 3 0 0 0 3-3V14a3 3 0 0 0-3-3Zm-15-1a6 6 0 0 1 12 0v1H10Zm16 17a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V14a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1Z" fill="#9f244d" class="color000000 svgShape"></path>
+    <path d="M16 16a2.993 2.993 0 0 0-1 5.816V24a1 1 0 0 0 2 0v-2.184A2.993 2.993 0 0 0 16 16Zm0 4a1 1 0 1 1 1-1 1 1 0 0 1-1 1Z" fill="#9f244d" class="color000000 svgShape"></path>
+  </g>
+</svg>
