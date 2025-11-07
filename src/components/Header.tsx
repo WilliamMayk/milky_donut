@@ -118,7 +118,7 @@ const Header = () => {
                 <div className="mt-auto pt-8 border-t">
                   <p className="text-sm text-muted-foreground text-center">
                     Made with 
-                    <img src={heartStar} alt="Heart icon" className="h-5 w-5 inline-block align-middle -translate-y-[2px] ml-2" />
+                    <img src={heartStar} alt="Heart icon" className="h-5 w-5 inline-block align-middle" />
                      in Accra
                   </p>
                 </div>
