@@ -1,73 +1,101 @@
-# Welcome to your Lovable project
+# 🍩 Sweet Temptation — Fresh Milky Donuts
 
-## Project info
+Welcome to the official repository for **Sweet Temptation**, a preorder website for delicious, freshly made milky donuts.  
+Customers can explore our flavors — including Vanilla, Chocolate, and Oreo Cream — and place preorders for Saturday deliveries in Accra.
 
-**URL**: https://lovable.dev/projects/4ecafc4a-3f0d-40de-99a8-f2e9e14fa3a7
+---
 
-## How can I edit this code?
+## 🌐 Live Website
+**URL:** [https://sweet-temptation.vercel.app](https://sweet-temptation.vercel.app)  
+*(Replace with your actual deployed link once hosted)*
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## 🧁 Project Overview
+**Sweet Temptation** is a modern, responsive web application designed to:
+- Showcase our handmade donuts in a clean, appetizing design  
+- Allow customers to place preorders quickly and easily  
+- Connect directly with our team via WhatsApp for fast responses  
+- Deliver a delightful browsing experience across devices  
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/4ecafc4a-3f0d-40de-99a8-f2e9e14fa3a7) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🧰 Tech Stack
+This website was built with:
+- ⚡ **Vite** — for lightning-fast builds  
+- ⚛️ **React (TypeScript)** — for scalable UI components  
+- 🎨 **Tailwind CSS** — for elegant, responsive styling  
+- 🧩 **shadcn/ui** — for consistent, modern UI elements  
+- 💬 **Framer Motion** — for smooth animations  
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 💻 Local Development
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+If you’d like to work on this project locally, follow these steps:
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+```bash
+# 1. Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# 2. Navigate to the project folder
+cd milky_donut
 
-# Step 3: Install the necessary dependencies.
-npm i
+# 3. Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# 4. Start the local development server
 npm run dev
+````
+
+Once the server starts, open your browser and visit:
+
+```
+http://localhost:5173
 ```
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## ⚙️ Deployment
 
-**Use GitHub Codespaces**
+You can deploy this site in a few ways:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### 🚀 Deploy via Vercel
 
-## What technologies are used for this project?
+1. Go to [Vercel](https://vercel.com/).
+2. Import this GitHub repository.
+3. Select the **Vite + React** framework preset.
+4. Add any environment variables (if needed).
+5. Deploy!
 
-This project is built with:
+Your site will be live within minutes. 🎉
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
+## 🧹 Before You Deploy
 
-Simply open [Lovable](https://lovable.dev/projects/4ecafc4a-3f0d-40de-99a8-f2e9e14fa3a7) and click on Share -> Publish.
+Be sure to:
 
-## Can I connect a custom domain to my Lovable project?
+* Optimize all images and icons
+* Remove console logs and unused assets
+* Confirm mobile responsiveness (especially preorder and contact sections)
+* Test WhatsApp links and preorder form submission
+* Verify metadata and favicon (Sweet Temptation logo)
 
-Yes, you can!
+---
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## ❤️ Credits
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Developed with love in Accra by **Sweet Temptation**
+Because your sweet tooth deserves it 🍩
+
+---
+
+## 📬 Contact
+
+📱 WhatsApp: [Click to Chat](https://wa.me/233556033174)
+📧 Email: [sweettemptation@gmail.com](mailto:sweettemptation@gmail.com)
+📍 Accra, Ghana
+
+```
+
