@@ -52,7 +52,7 @@ const Order = () => {
   const headerRef = useRef(null);
   const formRef = useRef(null);
   const itemsRef = useRef(null);
-  
+
   const isConfirmationInView = useInView(confirmationRef, { once: true, margin: "-100px" });
   const isHeaderInView = useInView(headerRef, { once: true, margin: "-100px" });
   const isFormInView = useInView(formRef, { once: true, margin: "-100px" });
@@ -61,8 +61,8 @@ const Order = () => {
   // Animation variants
   const fadeInUp = {
     hidden: { opacity: 0, y: 40 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: { duration: 0.6 }
     }
@@ -98,10 +98,11 @@ const Order = () => {
   };
 
   const generateOrderCode = () => {
-    const timestamp = Date.now().toString(36).slice(-4).toUpperCase();
-    const random = Math.random().toString(36).substring(2, 6).toUpperCase();
-    return `ST-${timestamp}-${random}`;
+    // Generate a random 6-digit numeric code
+    const code = Math.floor(100000 + Math.random() * 900000);
+    return code.toString();
   };
+
 
   const handleSubmitOrder = async () => {
     if (Object.keys(orderItems).length === 0) {
@@ -178,8 +179,8 @@ const Order = () => {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-1 py-6 sm:py-8 md:py-12 lg:py-20 px-4">
-  <div className="container max-w-4xl mx-auto px-4 sm:px-6">
-          <motion.div 
+        <div className="container max-w-4xl mx-auto px-4 sm:px-6">
+          <motion.div
             ref={headerRef}
             className="text-center mb-6 sm:mb-8 md:mb-12 space-y-2 sm:space-y-3 md:space-y-4"
             initial="hidden"
@@ -198,36 +199,36 @@ const Order = () => {
             animate={isFormInView ? "visible" : "hidden"}
             variants={fadeInUp}
           >
-          <Card className="border-2 border-secondary mb-6 sm:mb-8 rounded-2xl overflow-hidden">
-            <CardHeader className="p-4 sm:p-6">
-              <CardTitle className="text-lg sm:text-xl">Your Information</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4 p-4 sm:p-6 pt-0">
-              <div className="space-y-2">
-                <Label htmlFor="name" className="text-sm sm:text-base">Full Name</Label>
-                <Input
-                  id="name"
-                  placeholder="Enter your name"
-                  value={customerName}
-                  onChange={(e) => setCustomerName(e.target.value)}
-                  className="text-base"
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="phone" className="text-sm sm:text-base">WhatsApp Phone Number</Label>
-                <Input
-                  id="phone"
-                  placeholder="Enter your phone number"
-                  value={customerPhone}
-                  onChange={(e) => setCustomerPhone(e.target.value)}
-                  className="text-base"
-                />
-              </div>
-            </CardContent>
-          </Card>
+            <Card className="border-2 border-secondary mb-6 sm:mb-8 rounded-2xl overflow-hidden">
+              <CardHeader className="p-4 sm:p-6">
+                <CardTitle className="text-lg sm:text-xl">Your Information</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4 p-4 sm:p-6 pt-0">
+                <div className="space-y-2">
+                  <Label htmlFor="name" className="text-sm sm:text-base">Full Name</Label>
+                  <Input
+                    id="name"
+                    placeholder="Enter your name"
+                    value={customerName}
+                    onChange={(e) => setCustomerName(e.target.value)}
+                    className="text-base"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="phone" className="text-sm sm:text-base">WhatsApp Phone Number</Label>
+                  <Input
+                    id="phone"
+                    placeholder="Enter your phone number"
+                    value={customerPhone}
+                    onChange={(e) => setCustomerPhone(e.target.value)}
+                    className="text-base"
+                  />
+                </div>
+              </CardContent>
+            </Card>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             ref={itemsRef}
             className="grid grid-cols-1 gap-3 sm:gap-4 mb-6 sm:mb-8"
             initial="hidden"
@@ -236,40 +237,40 @@ const Order = () => {
           >
             {availableItems.map((item, index) => (
               <motion.div key={item.id} variants={fadeInUp}>
-              <Card className="w-full border-2 rounded-2xl overflow-hidden bg-card hover:shadow-lg hover:-translate-y-1 transform transition-transform duration-200">
-                <CardContent className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 sm:p-6 gap-3 sm:gap-4">
-                  <div className="flex items-center gap-3 sm:gap-4 flex-1 min-w-0 w-full">
-                    <span className="text-2xl sm:text-3xl flex-shrink-0">{item.emoji}</span>
-                    <div className="min-w-0 flex-1">
-                      <h3 className="font-semibold text-base sm:text-lg break-words">{item.name}</h3>
-                      <p className="text-xs sm:text-sm text-muted-foreground break-words">{item.flavor}</p>
-                      <p className="text-accent font-bold text-sm sm:text-base">GHC {item.price}</p>
+                <Card className="w-full border-2 rounded-2xl overflow-hidden bg-card hover:shadow-lg hover:-translate-y-1 transform transition-transform duration-200">
+                  <CardContent className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 sm:p-6 gap-3 sm:gap-4">
+                    <div className="flex items-center gap-3 sm:gap-4 flex-1 min-w-0 w-full">
+                      <span className="text-2xl sm:text-3xl flex-shrink-0">{item.emoji}</span>
+                      <div className="min-w-0 flex-1">
+                        <h3 className="font-semibold text-base sm:text-lg break-words">{item.name}</h3>
+                        <p className="text-xs sm:text-sm text-muted-foreground break-words">{item.flavor}</p>
+                        <p className="text-accent font-bold text-sm sm:text-base">GHC {item.price}</p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0 mt-3 sm:mt-0">
-                    <Button
-                      variant="outline"
-                      size="icon"
-                      className="h-10 w-10 p-2 sm:h-10 sm:w-10 active:scale-95 transition-transform"
-                      onClick={() => updateQuantity(item.id, -1)}
-                      disabled={!orderItems[item.id]}
-                    >
-                      <Minus className="h-4 w-4" />
-                    </Button>
-                    <span className="w-10 sm:w-12 text-center font-semibold text-base sm:text-lg">
-                      {orderItems[item.id] || 0}
-                    </span>
-                    <Button
-                      variant="outline"
-                      size="icon"
-                      className="h-10 w-10 p-2 sm:h-10 sm:w-10 active:scale-95 transition-transform"
-                      onClick={() => updateQuantity(item.id, 1)}
-                    >
-                      <Plus className="h-4 w-4" />
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
+                    <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0 mt-3 sm:mt-0">
+                      <Button
+                        variant="outline"
+                        size="icon"
+                        className="h-10 w-10 p-2 sm:h-10 sm:w-10 active:scale-95 transition-transform"
+                        onClick={() => updateQuantity(item.id, -1)}
+                        disabled={!orderItems[item.id]}
+                      >
+                        <Minus className="h-4 w-4" />
+                      </Button>
+                      <span className="w-10 sm:w-12 text-center font-semibold text-base sm:text-lg">
+                        {orderItems[item.id] || 0}
+                      </span>
+                      <Button
+                        variant="outline"
+                        size="icon"
+                        className="h-10 w-10 p-2 sm:h-10 sm:w-10 active:scale-95 transition-transform"
+                        onClick={() => updateQuantity(item.id, 1)}
+                      >
+                        <Plus className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
               </motion.div>
             ))}
           </motion.div>
@@ -279,27 +280,27 @@ const Order = () => {
             animate={isItemsInView ? "visible" : "hidden"}
             variants={fadeInUp}
           >
-          <Card className="border-2 border-accent sticky bottom-2 sm:bottom-4 shadow-lg bg-card rounded-2xl overflow-hidden">
-            <CardContent className="p-3 sm:p-4 md:p-6">
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2 md:gap-4 mb-3 sm:mb-4">
-                <span className="text-base sm:text-lg md:text-xl font-semibold">Total Amount</span>
-                <span className="text-xl sm:text-2xl md:text-3xl font-bold text-accent">GHC {total}</span>
-              </div>
-              <Button 
-                onClick={handleSubmitOrder}
-                className="w-full bg-accent hover:bg-accent/90 text-accent-foreground rounded-full text-sm sm:text-base active:scale-95 transform transition-all"
-                size="lg"
-                disabled={Object.keys(orderItems).length === 0 || isSubmitting}
-              >
-                <ShoppingCart className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-                {isSubmitting ? 'Submitting...' : 'Generate Order Code'}
-              </Button>
-              <p className="text-xs sm:text-sm text-center text-muted-foreground mt-2 sm:mt-3">
-                <span className="hidden sm:inline">📦 Orders close Friday 6PM • Saturday deliveries only</span>
-                <span className="sm:hidden">📦 Friday 6PM • Sat delivery</span>
-              </p>
-            </CardContent>
-          </Card>
+            <Card className="border-2 border-accent sticky bottom-2 sm:bottom-4 shadow-lg bg-card rounded-2xl overflow-hidden">
+              <CardContent className="p-3 sm:p-4 md:p-6">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2 md:gap-4 mb-3 sm:mb-4">
+                  <span className="text-base sm:text-lg md:text-xl font-semibold">Total Amount</span>
+                  <span className="text-xl sm:text-2xl md:text-3xl font-bold text-accent">GHC {total}</span>
+                </div>
+                <Button
+                  onClick={handleSubmitOrder}
+                  className="w-full bg-accent hover:bg-accent/90 text-accent-foreground rounded-full text-sm sm:text-base active:scale-95 transform transition-all"
+                  size="lg"
+                  disabled={Object.keys(orderItems).length === 0 || isSubmitting}
+                >
+                  <ShoppingCart className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+                  {isSubmitting ? 'Submitting...' : 'Generate Order Code'}
+                </Button>
+                <p className="text-xs sm:text-sm text-center text-muted-foreground mt-2 sm:mt-3">
+                  <span className="hidden sm:inline">📦 Orders close Friday 6PM • Saturday deliveries only</span>
+                  <span className="sm:hidden">📦 Friday 6PM • Sat delivery</span>
+                </p>
+              </CardContent>
+            </Card>
           </motion.div>
         </div>
       </main>
@@ -312,7 +313,7 @@ const Order = () => {
             <div className="text-4xl sm:text-5xl">🎉</div>
             <DialogTitle className="text-xl sm:text-2xl md:text-3xl">Order Confirmed!</DialogTitle>
           </DialogHeader>
-          
+
           <div className="space-y-4 sm:space-y-6">
             <div className="bg-accent/10 border-2 border-accent rounded-xl sm:rounded-2xl p-4 sm:p-6 text-center space-y-1 sm:space-y-2">
               <p className="text-xs sm:text-sm font-medium text-muted-foreground">Your Order Reference</p>
@@ -360,7 +361,7 @@ const Order = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-3 sm:pt-4">
-              <Button 
+              <Button
                 onClick={() => navigate("/")}
                 variant="outline"
                 className="flex-1 text-sm sm:text-base"
@@ -368,7 +369,7 @@ const Order = () => {
               >
                 Back to Home
               </Button>
-              <Button 
+              <Button
                 onClick={() => {
                   setOrderCode(null);
                   setOrderItems({});
